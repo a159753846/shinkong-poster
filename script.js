@@ -102,3 +102,59 @@ function animate() {
 
 init();
 animate();
+
+// Auto-fit long texts to prevent wrapping or overflowing on small screens / large system fonts
+function adjustLayoutForResponsiveness() {
+  const card = document.querySelector('.poster-card');
+  if (!card) return;
+  
+  const cardContentWidth = card.clientWidth - 48; // padding is 24px left/right
+  
+  // 1. Fit main slogan
+  const slogan = document.querySelector('.slogan');
+  if (slogan) {
+    slogan.style.fontSize = ''; // Reset to default CSS clamp value first
+    let fontSize = parseFloat(window.getComputedStyle(slogan).fontSize);
+    
+    // Dynamically shrink font size until text width fits within the content area
+    while (slogan.scrollWidth > cardContentWidth && fontSize > 10) {
+      fontSize -= 0.5;
+      slogan.style.fontSize = fontSize + 'px';
+    }
+  }
+
+  // 2. Fit sub-slogan lines (if any text overflows)
+  const sloganSub = document.querySelector('.slogan-sub');
+  if (sloganSub) {
+    sloganSub.style.fontSize = ''; // Reset first
+    let fontSize = parseFloat(window.getComputedStyle(sloganSub).fontSize);
+    while (sloganSub.scrollWidth > cardContentWidth && fontSize > 10) {
+      fontSize -= 0.5;
+      sloganSub.style.fontSize = fontSize + 'px';
+    }
+  }
+
+  // 3. Fit logo name container
+  const logoContainer = document.querySelector('.logo-container');
+  if (logoContainer) {
+    const names = document.querySelectorAll('.company-name-cn');
+    names.forEach(name => name.style.fontSize = ''); // Reset first
+    if (names.length > 0) {
+      let fontSize = parseFloat(window.getComputedStyle(names[0]).fontSize || '17');
+      while (logoContainer.scrollWidth > cardContentWidth && fontSize > 9) {
+        fontSize -= 0.5;
+        names.forEach(name => name.style.fontSize = fontSize + 'px');
+      }
+    }
+  }
+}
+
+// Run layout adjustment on load and when the window resizes
+window.addEventListener('load', adjustLayoutForResponsiveness);
+window.addEventListener('resize', adjustLayoutForResponsiveness);
+// Run right away to capture DOM ready state
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', adjustLayoutForResponsiveness);
+} else {
+  adjustLayoutForResponsiveness();
+}
