@@ -134,14 +134,14 @@ body {
 }
 
 .sk-logo {
-  height: clamp(16px, 4.5vw, 22px);
+  height: clamp(24px, 6.8vw, 33px); /* Enlarged by 50% */
   width: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.15));
 }
 
 .dy-logo {
-  height: clamp(24px, 6.8vw, 35px); /* Increased size by 35% */
+  height: clamp(36px, 10vw, 52px); /* Enlarged by another 50% */
   width: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.4));
