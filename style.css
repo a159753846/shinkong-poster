@@ -122,25 +122,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: clamp(6px, 2vw, 15px);
   margin-top: 5px;
 }
 
 .logo-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(4px, 1.2vw, 10px);
+  white-space: nowrap; /* Prevent text wrapping within logo items */
 }
 
 .sk-logo {
-  height: 22px;
+  height: clamp(16px, 4.5vw, 22px);
   width: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.15));
 }
 
 .dy-logo {
-  height: 26px;
+  height: clamp(18px, 5vw, 26px);
   width: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.4));
@@ -148,10 +149,10 @@ body {
 
 .company-name-cn {
   font-family: 'Noto Serif TC', serif;
-  font-size: 18px;
+  font-size: clamp(12px, 3.6vw, 17px); /* Responsive font size */
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .logo-separator {
