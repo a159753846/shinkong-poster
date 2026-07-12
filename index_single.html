@@ -232,12 +232,13 @@ body {
 }
 
 .slogan-sub {
-  font-size: 14px;
+  font-size: clamp(11px, 3.3vw, 14px); /* Fit on a single line on mobile */
   color: var(--text-secondary);
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   max-width: 620px;
   margin: 0 auto;
   line-height: 1.7;
+  white-space: nowrap;
 }
 
 /* Info Grid */
@@ -622,7 +623,7 @@ body {
         <span class="badge">頂級榮譽</span>
         <div class="logo-container">
           <div class="logo-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAAAdCAYAAAANW/o+AAABNUlEQVR4nO1Y0Q6EIAyz5P7/l3cxuTPEU9hG57hon93alYEDLIkQERnNAQAcNR2emU1ggWEmsk0BoQgvv4UbswobhUdjSx9mNkcqTlYeLfZ8yDRHGkYccZ99YzHRaxoyu0d2PHV8z6hWrIe7hzKaYHM88VD2wKr3FXX4aeM9vCxDv/o1+UqWScxuvCJ+66hswDLTBIwZve4umd00G1p1pXWUkM+m6MX7+evdtZvoRt0Vj1FKuOYYBGw/6yR+pY4VT0cpUWY9nJGgqzlHXXGh/Af0atq2XqZZMvgSwOY/wvAzC8ivBt6nH68Oba1l9KIqH1gF1vE1rzfPKHcP5pfIFjyFrrk1cczri6ceV2GLkWQWqM6iE93IIr4KrIWlFiETdFuUhvDVFvIVKevKlbItJHBgjerWN9HY9DqkGcWMAAAAAElFTkSuQmCC" class="sk-logo" alt="新光人壽">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAAdCAYAAADSFYAhAAABSElEQVR4nO1YWw7DMAiro93/ykydtKrPNBATmFZ/TgUbhzUFTIEQEenNAQAcNR0aMhvEgrfRiDYMhAKt/Cxz8YuivTRa9SGzcbLiZOVphYYPkcZJxaQz7qtnNAV7GIrIrpMdzzr+zsRarIW7BVcchZV8hjaOwW2FRe+s70xjuXvA0zwYY1lmW/Xv+cvom4x9EN8co+M37/P9D57EGrRcLGxYfSgZDYyCta7XFAQxHF4tJupgZ02H2/lfu7AHahMfHPGYSACyXCyinFBG6rjD04md+HziZL0oEKDLMrEtnagVnGlrzUJPTcvfOdJI6dzIsPm1o2r3Kgzk7c1VvjtNo5YZZzy0pSwIRdRyeJjIqk+9gbYS1XK3xDFHPnY9bqeHhLd+i3aLbmQUxcSIQ6cWKAm6NEKDe5cIeazMMqZu8k8BEMeP9YjXxxui1QxP5dkQ4gAAAABJRU5ErkJggg==" class="sk-logo" alt="新光人壽">
             <span class="company-name-cn">新光人壽</span>
           </div>
           <span class="logo-separator">×</span>

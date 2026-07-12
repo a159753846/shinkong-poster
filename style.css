@@ -225,12 +225,13 @@ body {
 }
 
 .slogan-sub {
-  font-size: 14px;
+  font-size: clamp(11px, 3.3vw, 14px); /* Fit on a single line on mobile */
   color: var(--text-secondary);
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   max-width: 620px;
   margin: 0 auto;
   line-height: 1.7;
+  white-space: nowrap;
 }
 
 /* Info Grid */
