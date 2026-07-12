@@ -328,10 +328,17 @@ body {
   white-space: nowrap;
 }
 
+.desc-group {
+  margin-top: -10px; /* Reduce spacing from standard item */
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Small vertical gap between remark lines */
+}
+
 .desc {
   font-size: 14px;
   color: var(--text-secondary);
-  margin-top: 5px;
+  margin-top: 0;
   letter-spacing: 0.5px;
 }
 

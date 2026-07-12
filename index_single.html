@@ -335,10 +335,17 @@ body {
   white-space: nowrap;
 }
 
+.desc-group {
+  margin-top: -10px; /* Reduce spacing from standard item */
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Small vertical gap between remark lines */
+}
+
 .desc {
   font-size: 14px;
   color: var(--text-secondary);
-  margin-top: 5px;
+  margin-top: 0;
   letter-spacing: 0.5px;
 }
 
@@ -663,8 +670,10 @@ body {
               <span class="gold-num">2,000 <span class="unit">萬保費</span></span>
               <span class="label">➔ &nbsp; 榮譽席位 2 位</span>
             </div>
-            <p class="desc">（完成2,000萬保費起，依此類推多得）</p>
-            <p class="desc">※ 商品以新光超吉馬利為主</p>
+            <div class="desc-group">
+              <p class="desc">（完成2,000萬保費起，依此類推多得）</p>
+              <p class="desc">※ 商品以新光超吉馬利為主</p>
+            </div>
           </div>
         </div>
 
