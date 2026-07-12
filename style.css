@@ -614,3 +614,37 @@ body {
     transform: none;
   }
 }
+
+/* Mobile-only responsive constraints to fundamentally prevent horizontal overflow */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 8px; /* Tighter body margins */
+  }
+  .poster-card {
+    padding: 30px 14px; /* Compact padding for mobile screen edges */
+  }
+  .info-box {
+    padding: 24px 14px; /* Narrower padding inside card boxes */
+  }
+  .target-grid {
+    gap: 8px; /* Smaller gaps in the target column */
+  }
+  .target-card {
+    padding: 15px 4px; /* Compact padding for target metrics cards */
+  }
+  .target-num {
+    font-size: 24px; /* Shrink metric numbers */
+  }
+  .target-label {
+    font-size: 11px; /* Shrink metric labels */
+  }
+  .gold-num {
+    font-size: 24px; /* Shrink standards numbers */
+  }
+  .gold-num .unit {
+    font-size: 13px;
+  }
+  .label {
+    font-size: 14px; /* Shrink standards labels */
+  }
+}
