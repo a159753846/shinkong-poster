@@ -656,6 +656,103 @@ body {
   }
 }
 
+/* Export Button & Modal Styles */
+.export-section {
+  text-align: center;
+  margin-top: 25px;
+  z-index: 10;
+  position: relative;
+}
+
+.btn-export {
+  background: var(--gold-gradient);
+  color: #08090c;
+  border: none;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+  font-family: 'Noto Serif TC', serif;
+  letter-spacing: 1px;
+}
+
+.btn-export:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(8, 9, 12, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  background: #12141a;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px 20px 20px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  margin: auto;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  color: #9ea4b5;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
+
+.modal-hint {
+  color: var(--gold-primary);
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+#modalImageContainer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#modalImageContainer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
 </style>
 </head>
 <body>
@@ -794,8 +891,25 @@ body {
         <p class="action-call">頂峰相見，共創傳奇</p>
       </div>
 
+      <!-- Export Button (hidden during image generation) -->
+      <div class="export-section">
+        <button id="exportBtn" class="btn-export">📥 產生海報圖片</button>
+      </div>
+
     </div>
   </div>
+
+  <!-- Image Modal Overlay -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <p class="modal-hint">💡 提示：請長按下方圖片並選擇「儲存圖片」即可存入手機相簿！</p>
+      <div id="modalImageContainer"></div>
+    </div>
+  </div>
+
+  <!-- html2canvas library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <script>
 const canvas = document.getElementById('particleCanvas');
@@ -957,6 +1071,57 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', adjustLayoutForResponsiveness);
 } else {
   adjustLayoutForResponsiveness();
+}
+
+// Export to PNG function using html2canvas
+const exportBtn = document.getElementById('exportBtn');
+const imageModal = document.getElementById('imageModal');
+const closeBtn = document.querySelector('.close-btn');
+const modalImageContainer = document.getElementById('modalImageContainer');
+
+if (exportBtn && imageModal) {
+  exportBtn.addEventListener('click', () => {
+    // Hide the export button container when rendering to prevent rendering the button on the poster
+    const exportSection = document.querySelector('.export-section');
+    if (exportSection) exportSection.style.display = 'none';
+    
+    const posterCard = document.querySelector('.poster-card');
+    
+    // Use html2canvas to render the card
+    html2canvas(posterCard, {
+      backgroundColor: '#08090c', // Dark background matching theme
+      scale: 2, // Double scale for high-definition image!
+      useCORS: true,
+      logging: false
+    }).then(canvas => {
+      // Restore export button
+      if (exportSection) exportSection.style.display = 'block';
+      
+      const imgData = canvas.toDataURL('image/png');
+      
+      // Display image in modal
+      modalImageContainer.innerHTML = `<img src="${imgData}" alt="榮譽宴海報">`;
+      imageModal.style.display = 'flex';
+    }).catch(err => {
+      if (exportSection) exportSection.style.display = 'block';
+      console.error('Error generating image:', err);
+      alert('圖片產生失敗，請直接在瀏覽器進行截圖！');
+    });
+  });
+  
+  // Close modal
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      imageModal.style.display = 'none';
+    });
+  }
+  
+  // Close on click outside
+  window.addEventListener('click', (event) => {
+    if (event.target === imageModal) {
+      imageModal.style.display = 'none';
+    }
+  });
 }
 
 </script>

@@ -142,8 +142,25 @@
         <p class="action-call">頂峰相見，共創傳奇</p>
       </div>
 
+      <!-- Export Button (hidden during image generation) -->
+      <div class="export-section">
+        <button id="exportBtn" class="btn-export">📥 產生海報圖片</button>
+      </div>
+
     </div>
   </div>
+
+  <!-- Image Modal Overlay -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <p class="modal-hint">💡 提示：請長按下方圖片並選擇「儲存圖片」即可存入手機相簿！</p>
+      <div id="modalImageContainer"></div>
+    </div>
+  </div>
+
+  <!-- html2canvas library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <script src="script.js?v=1.1"></script>
 </body>

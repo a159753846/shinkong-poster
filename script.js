@@ -158,3 +158,54 @@ if (document.readyState === 'loading') {
 } else {
   adjustLayoutForResponsiveness();
 }
+
+// Export to PNG function using html2canvas
+const exportBtn = document.getElementById('exportBtn');
+const imageModal = document.getElementById('imageModal');
+const closeBtn = document.querySelector('.close-btn');
+const modalImageContainer = document.getElementById('modalImageContainer');
+
+if (exportBtn && imageModal) {
+  exportBtn.addEventListener('click', () => {
+    // Hide the export button container when rendering to prevent rendering the button on the poster
+    const exportSection = document.querySelector('.export-section');
+    if (exportSection) exportSection.style.display = 'none';
+    
+    const posterCard = document.querySelector('.poster-card');
+    
+    // Use html2canvas to render the card
+    html2canvas(posterCard, {
+      backgroundColor: '#08090c', // Dark background matching theme
+      scale: 2, // Double scale for high-definition image!
+      useCORS: true,
+      logging: false
+    }).then(canvas => {
+      // Restore export button
+      if (exportSection) exportSection.style.display = 'block';
+      
+      const imgData = canvas.toDataURL('image/png');
+      
+      // Display image in modal
+      modalImageContainer.innerHTML = `<img src="${imgData}" alt="榮譽宴海報">`;
+      imageModal.style.display = 'flex';
+    }).catch(err => {
+      if (exportSection) exportSection.style.display = 'block';
+      console.error('Error generating image:', err);
+      alert('圖片產生失敗，請直接在瀏覽器進行截圖！');
+    });
+  });
+  
+  // Close modal
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      imageModal.style.display = 'none';
+    });
+  }
+  
+  // Close on click outside
+  window.addEventListener('click', (event) => {
+    if (event.target === imageModal) {
+      imageModal.style.display = 'none';
+    }
+  });
+}
