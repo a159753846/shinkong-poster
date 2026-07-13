@@ -66,7 +66,7 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-color);
   border-radius: 28px;
-  padding: 45px 24px;
+  padding: 25px 20px;
   width: 100%;
   max-width: 460px; /* Locked to vertical mobile aspect ratio */
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 
@@ -111,7 +111,7 @@ body {
 /* Header style */
 .poster-header {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .badge {
@@ -124,7 +124,7 @@ body {
   padding: 5px 18px;
   border-radius: 50px;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   background: rgba(212, 175, 55, 0.08);
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
@@ -176,38 +176,38 @@ body {
 /* Title & Slogan Section */
 .title-section {
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 
 .main-title {
   font-family: 'Noto Serif TC', serif;
-  font-size: 68px;
+  font-size: 48px;
   font-weight: 900;
-  letter-spacing: 16px;
+  letter-spacing: 10px;
   background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2px;
-  text-indent: 16px; /* center letters perfectly with letter-spacing */
+  text-indent: 10px; /* center letters perfectly with letter-spacing */
   filter: drop-shadow(0 4px 15px rgba(0,0,0,0.6));
 }
 
 .sub-title {
   font-family: 'Cinzel', serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 10px;
+  letter-spacing: 6px;
   color: var(--gold-primary);
   opacity: 0.85;
-  margin-bottom: 25px;
-  text-indent: 10px;
+  margin-bottom: 12px;
+  text-indent: 6px;
 }
 
 .divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 15px 0 25px 0;
+  margin: 8px 0 12px 0;
 }
 
 .divider::before, .divider::after {
@@ -228,22 +228,22 @@ body {
 
 .slogan {
   font-family: 'Noto Serif TC', serif;
-  font-size: clamp(11px, 4.2vw, 22px); /* Responsive font size to fit single line on all mobile screens */
+  font-size: clamp(11px, 4.2vw, 17px); /* Responsive font size to fit single line on all mobile screens */
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: 1px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
 }
 
 .slogan-sub {
-  font-size: clamp(13px, 3.8vw, 15px); /* Highly readable font-size clamp for two lines */
+  font-size: clamp(11px, 3.2vw, 13px); /* Highly readable font-size clamp for two lines */
   color: var(--text-secondary);
   letter-spacing: 1.5px;
   max-width: 620px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -251,15 +251,15 @@ body {
 .content-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  margin-bottom: 35px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .info-box {
   background: rgba(255, 255, 255, 0.015);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  padding: 35px 28px;
+  padding: 18px 20px;
   transition: all 0.4s ease;
   position: relative;
 }
@@ -279,26 +279,26 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 
 .box-header h3 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
   color: #ffffff;
 }
 
 .box-header .icon {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 /* Standards Styling */
 .standard-details {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .standard-item {
@@ -306,7 +306,7 @@ body {
   align-items: center;
   gap: 12px;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   white-space: nowrap;
 }
 
@@ -316,7 +316,7 @@ body {
 }
 
 .gold-num {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   background: var(--gold-gradient);
   -webkit-background-clip: text;
@@ -327,14 +327,14 @@ body {
 }
 
 .gold-num .unit {
-  font-size: 16px;
+  font-size: 13px;
   font-family: 'Noto Serif TC', serif;
   -webkit-text-fill-color: var(--gold-primary);
   margin-left: 2px;
 }
 
 .label {
-  font-size: 17px;
+  font-size: 14px;
   color: var(--text-primary);
   font-weight: 600;
   letter-spacing: 1px;
@@ -342,14 +342,14 @@ body {
 }
 
 .desc-group {
-  margin-top: -10px; /* Reduce spacing from standard item */
+  margin-top: -6px; /* Reduce spacing from standard item */
   display: flex;
   flex-direction: column;
-  gap: 4px; /* Small vertical gap between remark lines */
+  gap: 2px; /* Small vertical gap between remark lines */
 }
 
 .desc {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-secondary);
   margin-top: 0;
   letter-spacing: 0.5px;
@@ -366,7 +366,7 @@ body {
 
 .target-card {
   text-align: center;
-  padding: 20px 8px;
+  padding: 12px 6px;
   background: rgba(212, 175, 55, 0.02);
   border: 1px solid rgba(212, 175, 55, 0.08);
   border-radius: 14px;
@@ -382,21 +382,21 @@ body {
 
 .target-num {
   display: block;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 700;
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .target-num .unit {
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Noto Serif TC', serif;
   color: var(--gold-primary);
 }
 
 .target-label {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--text-secondary);
   white-space: nowrap;
   font-weight: 500;
@@ -404,187 +404,100 @@ body {
 }
 
 /* Timeline flow styles */
-.timeline-section {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  padding: 35px;
-  margin-bottom: 45px;
-}
-
-.section-title-wrapper {
+.horizontal-timeline {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 35px;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 5px 0;
 }
 
-.section-title-wrapper h3 {
-  font-family: 'Noto Serif TC', serif;
-  font-size: 17px;
-  letter-spacing: 3px;
-  color: var(--text-secondary);
-  font-weight: 600;
-}
-
-.diamond-small {
-  width: 6px;
-  height: 6px;
-  background: var(--gold-primary);
-  transform: rotate(45deg);
-  box-shadow: 0 0 5px var(--gold-primary);
-}
-
-.vertical-timeline {
-  position: relative;
-  padding-left: 30px;
+.timeline-point {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 4px;
 }
 
-.vertical-timeline::before {
-  content: '';
-  position: absolute;
-  left: 9px;
-  top: 5px;
-  bottom: 5px;
-  width: 2px;
-  background: linear-gradient(to bottom, 
-    rgba(212, 175, 55, 0.6) 0%, 
-    rgba(212, 175, 55, 0.3) 50%, 
-    rgba(212, 175, 55, 0.05) 100%
-  );
-}
-
-.timeline-item {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-}
-
-.timeline-badge {
-  position: absolute;
-  left: -26px;
-  top: 6px;
-  width: 10px;
-  height: 10px;
-  background: #08090c;
-  border: 2px solid var(--gold-primary);
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: 0 0 8px var(--gold-primary);
-}
-
-.timeline-badge-star {
-  position: absolute;
-  left: -30px;
-  top: 3px;
-  width: 18px;
-  height: 18px;
-  background: var(--gold-gradient);
-  color: #08090c;
-  border-radius: 50%;
-  z-index: 2;
-  font-size: 11px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--gold-glow);
-}
-
-.timeline-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  text-align: left;
-}
-
-.step-date {
+.timeline-point .date {
   font-family: 'Outfit', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--gold-primary);
-  margin-bottom: 2px;
-  white-space: nowrap;
 }
 
-.step-name {
-  font-size: 15px;
-  font-weight: 600;
+.timeline-point .label {
+  font-size: 11px;
   color: var(--text-primary);
-  margin-bottom: 2px;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
+  font-weight: 500;
 }
 
-.step-note {
-  font-size: 13px;
-  color: var(--text-secondary);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-}
-
-.timeline-item.highlight {
-  background: rgba(212, 175, 55, 0.05);
-  border: 1px dashed var(--gold-primary);
-  padding: 12px 16px;
-  border-radius: 12px;
-  margin-left: -12px;
-  width: calc(100% + 12px);
-  box-shadow: var(--gold-glow);
-}
-
-.timeline-item.highlight .timeline-badge-star {
-  left: -18px;
-}
-
-.timeline-item.highlight .step-date {
+.timeline-point.highlight .date {
   background: var(--gold-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: var(--gold-glow);
+}
+
+.timeline-point.highlight .label {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.timeline-arrow {
+  color: rgba(212, 175, 55, 0.4);
+  font-size: 14px;
+}
+
+.timeline-footer-note {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.06);
+  padding-top: 8px;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
 /* Footer Highlights */
 .poster-footer {
   text-align: center;
-  margin-top: 35px;
+  margin-top: 5px;
   position: relative;
 }
 
 .bonus-tag {
   background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
   color: #ffffff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 3px;
-  padding: 5px 18px;
+  padding: 4px 14px;
   border-radius: 50px;
   display: inline-block;
-  margin-bottom: 18px;
-  box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+  margin-bottom: 8px;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
   text-transform: uppercase;
 }
 
 .footer-text {
-  font-size: 16px;
+  font-size: 12px;
   color: #ffffff;
-  margin-bottom: 25px;
-  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
   font-weight: 500;
 }
 
 .action-call {
   font-family: 'Cinzel', serif;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 6px;
+  letter-spacing: 5px;
   color: var(--gold-primary);
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
   text-transform: uppercase;
-  text-indent: 6px;
+  text-indent: 5px;
 }
 
 /* Responsive adjustment */
@@ -625,34 +538,48 @@ body {
 /* Mobile-only responsive constraints to fundamentally prevent horizontal overflow */
 @media (max-width: 480px) {
   body {
-    padding: 20px 8px; /* Tighter body margins */
+    padding: 10px 4px; /* Tighter body margins */
   }
   .poster-card {
-    padding: 30px 14px; /* Compact padding for mobile screen edges */
+    padding: 18px 12px; /* Compact padding for mobile screen edges */
   }
   .info-box {
-    padding: 24px 14px; /* Narrower padding inside card boxes */
+    padding: 12px 10px; /* Narrower padding inside card boxes */
   }
   .target-grid {
-    gap: 8px; /* Smaller gaps in the target column */
+    gap: 6px; /* Smaller gaps in the target column */
   }
   .target-card {
-    padding: 15px 4px; /* Compact padding for target metrics cards */
+    padding: 8px 4px; /* Compact padding for target metrics cards */
   }
   .target-num {
-    font-size: 24px; /* Shrink metric numbers */
+    font-size: 18px; /* Shrink metric numbers */
   }
   .target-label {
-    font-size: 11px; /* Shrink metric labels */
+    font-size: 10px; /* Shrink metric labels */
   }
   .gold-num {
-    font-size: 24px; /* Shrink standards numbers */
+    font-size: 18px; /* Shrink standards numbers */
   }
   .gold-num .unit {
-    font-size: 13px;
+    font-size: 11px;
   }
   .label {
-    font-size: 14px; /* Shrink standards labels */
+    font-size: 12px; /* Shrink standards labels */
+  }
+  .timeline-point .date {
+    font-size: 13px;
+  }
+  .timeline-point .label {
+    font-size: 9px;
+  }
+  .timeline-arrow {
+    font-size: 11px;
+  }
+  .timeline-footer-note {
+    font-size: 10px;
+    margin-top: 8px;
+    padding-top: 6px;
   }
 }
 
@@ -808,7 +735,6 @@ body {
               <span class="label">➔ &nbsp; 榮譽席位 2 位</span>
             </div>
             <div class="desc-group">
-              <p class="desc">※ 商品以新光超吉馬利為主</p>
               <p class="desc">※ 完成2,000萬保費起，依此類推多得</p>
             </div>
           </div>
@@ -839,48 +765,34 @@ body {
       </div>
 
       <!-- Timeline & Venue -->
-      <!-- Timeline & Venue -->
-      <div class="timeline-section">
-        <div class="section-title-wrapper">
-          <span class="diamond-small"></span>
+      <div class="info-box border-gold">
+        <div class="box-header">
+          <span class="icon">📅</span>
           <h3>關鍵時程與舉辦資訊</h3>
-          <span class="diamond-small"></span>
         </div>
-        
-        <div class="vertical-timeline">
-          <div class="timeline-item">
-            <div class="timeline-badge"></div>
-            <div class="timeline-content">
-              <span class="step-date">07/09</span>
-              <span class="step-name">競賽起算</span>
-            </div>
+        <div class="horizontal-timeline">
+          <div class="timeline-point">
+            <span class="date">07/09</span>
+            <span class="label">競賽起算</span>
           </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-badge"></div>
-            <div class="timeline-content">
-              <span class="step-date">09/30</span>
-              <span class="step-name">受理截止</span>
-            </div>
+          <div class="timeline-arrow">➔</div>
+          <div class="timeline-point">
+            <span class="date">09/30</span>
+            <span class="label">受理截止</span>
           </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-badge"></div>
-            <div class="timeline-content">
-              <span class="step-date">10/31</span>
-              <span class="step-name">核實截止</span>
-              <span class="step-note">以保單簽收回條為主</span>
-            </div>
+          <div class="timeline-arrow">➔</div>
+          <div class="timeline-point">
+            <span class="date">10/31</span>
+            <span class="label">核實截止</span>
           </div>
-          
-          <div class="timeline-item highlight">
-            <div class="timeline-badge-star">★</div>
-            <div class="timeline-content">
-              <span class="step-date">10月底 / 11月</span>
-              <span class="step-name">榮耀盛宴</span>
-              <span class="step-note">📍 竹林新港城</span>
-            </div>
+          <div class="timeline-arrow">➔</div>
+          <div class="timeline-point highlight">
+            <span class="date">11月</span>
+            <span class="label">榮耀盛宴</span>
           </div>
+        </div>
+        <div class="timeline-footer-note">
+          ※ 備註：核實以保單簽收回條為主，商品以新光超吉馬利為主。
         </div>
       </div>
 
